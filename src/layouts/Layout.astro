@@ -10,14 +10,18 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="=Sara:card" content="summary_large_image" />
+		<meta name="=Sara:site" content="sarita" />
+		<meta name="view-transition" content="same-oriin" />
 	</head>
 	<body>
-		<slot />
+		<div id="content">
+			<slot />
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -33,4 +37,12 @@ const { title } = Astro.props;
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
+
+	::view-transition-old(root), // <- foto antigua
+	::view-transition-new(root) { 
+		animation-duration: 5s;
+	}
 </style>
+<script>
+
+</script>
